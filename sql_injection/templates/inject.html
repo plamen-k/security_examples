@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inject</title>
+</head>
+<body>
+<form method='POST'>
+    {% csrf_token %}
+    <p>
+        Search: <textarea  name="search"></textarea>  
+    </p>
+    {% for r in result%}
+        {{r}}
+    {% endfor %}
+    <input type="submit"/>
+</form>
+
+
+<code>
+    select * from csrf_payment where amount="foo" ; insert into csrf_payment values(10000,'injector', 10, 'evil');
+</code>
+or try
+
+<code>
+    foo" ; insert into csrf_payment values(1120,'injector', 10, '<script>alert("You are owned");</script>'); --
+</code>
+
+</body>
+</html>

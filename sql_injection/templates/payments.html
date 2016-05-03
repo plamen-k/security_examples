@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Payments</title>
+</head>
+<body>
+<div>
+	{% for payment in payments %}
+		<p>{% autoescape off %}{{payment}}{% endautoescape %}</p>
+		
+	{% endfor %}
+</div>
+</body>
+</html>
